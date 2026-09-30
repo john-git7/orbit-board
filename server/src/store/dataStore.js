@@ -107,6 +107,7 @@ function deleteCard(boardId, columnId, cardId) {
   // throws: "Cannot read properties of undefined (reading 'id')".
   // The app runs fine otherwise — the error only appears on delete.
   const target = column.cards.find((card) => card.cardId === cardId);
+  console.log("DEBUG deleteCard:", { cardId, target, cards: column.cards });
   column.cards = column.cards.filter((card) => card.id !== target.id);
 
   writeData(boards);
